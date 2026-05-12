@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #F2EFE4;
+  --color-blue: #0050FF;
+  --color-black: #050505;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bebas);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #F2EFE4;
+  color: #050505;
+  font-family: var(--font-inter), Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Marquee ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track-reverse {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-reverse 24s linear infinite;
+}
+.marquee-track:hover,
+.marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* ---------- Underline hover ---------- */
+.link-line {
+  position: relative;
+}
+.link-line::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.22s ease;
+}
+.link-line:hover::after { width: 100%; }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #F2EFE4; }
+::-webkit-scrollbar-thumb { background: #0050FF; border-radius: 3px; }
+
+/* ---------- Border button ---------- */
+.btn-outline {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 1.5px solid #050505;
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.18s ease, color 0.18s ease;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background: #050505;
+  color: #F2EFE4;
+}
+.btn-outline-white {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 1.5px solid #F2EFE4;
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #F2EFE4;
+  transition: background 0.18s ease, color 0.18s ease;
+  cursor: pointer;
+}
+.btn-outline-white:hover {
+  background: #F2EFE4;
+  color: #0050FF;
+}
+
+/* ---------- Bebas display ---------- */
+.font-display {
+  font-family: var(--font-bebas), Impact, "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}

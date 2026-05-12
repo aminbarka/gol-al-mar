@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.thesummerdrive.com)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(curl -s --max-time 8 http://localhost:3002/)",
+      "Bash(curl -s --max-time 10 http://localhost:3000/)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema remote -v)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema log --oneline)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema status)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('githubUsername',''\\) or d.get\\('github',''\\) or 'no github key'\\)\")",
+      "PowerShell(cmdkey *)",
+      "PowerShell($GitExe = \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\"; & $GitExe -C \"C:\\\\Users\\\\mohamed.elamin\\\\outdoor-cinema\" config credential.helper 2>&1; [System.Net.CredentialCache]::DefaultNetworkCredentials)",
+      "PowerShell(Get-Content *)",
+      "Bash(\"/c/Program Files/Git/cmd/git.exe\" credential fill)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('html_url'\\) or d.get\\('message','error'\\)\\)\")",
+      "Bash(npm install *)",
+      "Bash(npx vercel *)"
+    ]
+  }
+}
