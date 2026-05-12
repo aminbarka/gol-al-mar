@@ -18,7 +18,19 @@
       "Bash(\"/c/Program Files/Git/cmd/git.exe\" credential fill)",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\('html_url'\\) or d.get\\('message','error'\\)\\)\")",
       "Bash(npm install *)",
-      "Bash(npx vercel *)"
+      "Bash(npx vercel *)",
+      "Bash(/c/Program Files/Git/cmd/git.exe *)",
+      "Bash(\"/c/Program Files/Git/cmd/git.exe\" -C /c/Users/mohamed.elamin/outdoor-cinema log --oneline -3)",
+      "Bash(\"/c/Program Files/Git/cmd/git.exe\" -C /c/Users/mohamed.elamin/outdoor-cinema branch -vv)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema branch -a)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema log --oneline --all)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema config user.name \"aminbarka\")",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema config user.email \"mohamedelaminelbaraka1@gmail.com\")",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema remote add origin https://github.com/aminbarka/gol-al-mar.git)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema remote set-url origin https://github.com/aminbarka/gol-al-mar.git)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema diff --cached --stat)",
+      "Bash(git -C /c/Users/mohamed.elamin/outdoor-cinema show HEAD:components/Hero.tsx)",
+      "Bash(git *)"
     ]
   }
 }
