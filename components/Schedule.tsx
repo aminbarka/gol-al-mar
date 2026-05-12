@@ -1,7 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 
-const phases = [
+type Match = { date: string; teams: string; time: string; highlight?: boolean };
+type Phase = { phase: string; dates: string; matches: Match[] };
+
+const phases: Phase[] = [
   {
     phase: "Group Stage",
     dates: "12 JUN — 26 JUN",
