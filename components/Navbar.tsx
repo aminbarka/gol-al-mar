@@ -1,9 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useReservation } from "./ReservationContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { openModal } = useReservation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -26,9 +28,9 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           {[
-            { label: "THE EVENT", href: "#about" },
-            { label: "MATCHES", href: "#schedule" },
-            { label: "PHOTOS", href: "#gallery" },
+            { label: "EL EVENTO", href: "#about" },
+            { label: "PARTIDOS", href: "#schedule" },
+            { label: "FOTOS", href: "#gallery" },
           ].map((link) => (
             <a
               key={link.href}
@@ -38,9 +40,9 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="#info" className="btn-outline text-[#050505]">
-            RESERVE SPOT
-          </a>
+          <button onClick={openModal} className="btn-outline text-[#050505]">
+            RESERVAR
+          </button>
         </div>
 
         <button
@@ -57,9 +59,9 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-[#F2EFE4] border-t border-[#050505]/10 px-6 py-6 flex flex-col gap-5">
           {[
-            { label: "THE EVENT", href: "#about" },
-            { label: "MATCHES", href: "#schedule" },
-            { label: "PHOTOS", href: "#gallery" },
+            { label: "EL EVENTO", href: "#about" },
+            { label: "PARTIDOS", href: "#schedule" },
+            { label: "FOTOS", href: "#gallery" },
           ].map((link) => (
             <a
               key={link.href}
@@ -70,13 +72,12 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#info"
-            onClick={() => setOpen(false)}
-            className="btn-outline text-center text-[#050505] mt-2"
+          <button
+            onClick={() => { setOpen(false); openModal(); }}
+            className="btn-outline text-center text-[#050505] mt-2 w-full"
           >
-            RESERVE SPOT
-          </a>
+            RESERVAR
+          </button>
         </div>
       )}
     </nav>

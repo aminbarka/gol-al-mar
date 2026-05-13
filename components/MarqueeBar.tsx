@@ -1,14 +1,14 @@
 export default function MarqueeBar() {
   const items = [
     "⚽ GOL AL MAR",
-    "WORLD CUP 2026",
-    "VILANOVA BEACH",
-    "FREE ENTRY",
-    "PROJECTOR SCREEN",
-    "COLD DRINKS",
-    "EVERY MATCH LIVE",
-    "SAND & FOOTBALL",
-    "SUMMER 2026",
+    "MUNDIAL 2026",
+    "PLAYA DE VILANOVA",
+    "ENTRADA LIBRE",
+    "PANTALLA GIGANTE",
+    "BEBIDAS FRÍAS",
+    "TODOS LOS PARTIDOS EN VIVO",
+    "ARENA Y FÚTBOL",
+    "VERANO 2026",
   ];
 
   const repeated = [...items, ...items, ...items];

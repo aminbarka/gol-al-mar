@@ -36,7 +36,7 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="font-display text-white text-[clamp(2rem,6vw,6rem)] leading-none max-w-4xl"
           >
-            FOOTBALL NEVER LOOKED THIS GOOD
+            EL FÚTBOL NUNCA SE VIO TAN BIEN
           </motion.p>
         </div>
       </div>
@@ -51,19 +51,18 @@ export default function About() {
             transition={{ duration: 0.65 }}
           >
             <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-5">
-              About Gol al Mar
+              Sobre Gol al Mar
             </p>
             <p className="text-base leading-relaxed text-[#050505]/70 mb-5">
-              There&apos;s no doubt about it. The World Cup only comes around every
-              four years — and this summer we&apos;re watching it the only way that
-              makes sense: in front of the sea, on the sand, with everyone who
-              loves the game.
+              No hay duda. El Mundial solo llega cada cuatro años — y este
+              verano lo vamos a ver de la única manera que tiene sentido: frente
+              al mar, en la arena, con todos los que aman el fútbol.
             </p>
             <p className="text-base leading-relaxed text-[#050505]/70">
-              We&apos;ve set up a giant projector screen right at Vilanova Beach.
-              Every match, live, with stadium sound carrying out across the
-              water. Bring your crew, your flag, and get ready to shout
-              at the sea.
+              Hemos montado una pantalla de proyector gigante justo en la Playa
+              de Vilanova. Todos los partidos, en directo, con el sonido del
+              estadio resonando sobre el agua. Trae a tu gente, tu bandera, y
+              prepárate para gritar al mar.
             </p>
           </motion.div>
 
@@ -75,15 +74,15 @@ export default function About() {
             className="flex flex-col justify-between"
           >
             <p className="text-base leading-relaxed text-[#050505]/70 mb-10">
-              Grab your sunglasses. Dig your toes in the sand. Cheer as loud as
-              you like — nobody&apos;s shushing you here. This is Vilanova&apos;s World
-              Cup and everyone&apos;s invited.
+              Coge tus gafas de sol. Hunde los pies en la arena. Grita todo lo
+              que quieras — aquí nadie te va a callar. Este es el Mundial de
+              Vilanova y todo el mundo está invitado.
             </p>
             <div className="grid grid-cols-3 gap-6 border-t border-[#050505]/12 pt-8">
               {[
-                { num: "64", label: "Matches" },
-                { num: "FREE", label: "Always" },
-                { num: "6M+", label: "Screen" },
+                { num: "64", label: "Partidos" },
+                { num: "GRATIS", label: "Siempre" },
+                { num: "6M+", label: "Pantalla" },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

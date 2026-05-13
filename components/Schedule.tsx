@@ -1,41 +1,43 @@
 "use client";
 import { motion } from "framer-motion";
+import { useReservation } from "./ReservationContext";
 
 type Match = { date: string; teams: string; time: string; highlight?: boolean };
 type Phase = { phase: string; dates: string; matches: Match[] };
 
 const phases: Phase[] = [
   {
-    phase: "Group Stage",
+    phase: "Fase de Grupos",
     dates: "12 JUN — 26 JUN",
     matches: [
-      { date: "JUN 12", teams: "Opening Match · USA vs. Mexico", time: "21:00" },
-      { date: "JUN 15", teams: "Spain · First Group Game", time: "21:00" },
-      { date: "JUN 19", teams: "Spain · Group Matchday 2", time: "21:00" },
-      { date: "JUN 23", teams: "Spain · Group Matchday 3", time: "21:00" },
-      { date: "JUN 26", teams: "Best Clashes of the Day", time: "21:00" },
+      { date: "JUN 12", teams: "Partido Inaugural · USA vs. México", time: "21:00" },
+      { date: "JUN 15", teams: "España · Primer Partido de Grupo", time: "21:00" },
+      { date: "JUN 19", teams: "España · Grupo Jornada 2", time: "21:00" },
+      { date: "JUN 23", teams: "España · Grupo Jornada 3", time: "21:00" },
+      { date: "JUN 26", teams: "Los Mejores Choques del Día", time: "21:00" },
     ],
   },
   {
-    phase: "Knockout Rounds",
+    phase: "Rondas Eliminatorias",
     dates: "1 JUL — 16 JUL",
     matches: [
-      { date: "JUL 1–4", teams: "Round of 32", time: "21:00" },
-      { date: "JUL 6–9", teams: "Round of 16", time: "21:00" },
-      { date: "JUL 11–12", teams: "Quarter Finals", time: "21:00" },
-      { date: "JUL 15–16", teams: "Semi Finals", time: "21:00" },
+      { date: "JUL 1–4", teams: "Ronda de 32", time: "21:00" },
+      { date: "JUL 6–9", teams: "Octavos de Final", time: "21:00" },
+      { date: "JUL 11–12", teams: "Cuartos de Final", time: "21:00" },
+      { date: "JUL 15–16", teams: "Semifinales", time: "21:00" },
     ],
   },
   {
-    phase: "The Final",
+    phase: "La Final",
     dates: "19 JUL",
     matches: [
-      { date: "JUL 19", teams: "WORLD CUP FINAL 2026", time: "21:00", highlight: true },
+      { date: "JUL 19", teams: "FINAL DEL MUNDIAL 2026", time: "21:00", highlight: true },
     ],
   },
 ];
 
 export default function Schedule() {
+  const { openModal } = useReservation();
   return (
     <section id="schedule" className="bg-[#0050FF] py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
@@ -49,13 +51,13 @@ export default function Schedule() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-white/20 pb-10"
         >
           <h2 className="font-display text-[clamp(3rem,9vw,9rem)] text-white leading-none">
-            MATCH<br />SCHEDULE:
+            CALENDARIO<br />DE PARTIDOS:
           </h2>
           <div className="md:text-right">
             <p className="text-white/50 text-xs font-bold tracking-widest uppercase mb-2">Gol al Mar</p>
             <p className="text-white/60 text-sm max-w-xs leading-relaxed">
-              We screen every match. Gates open 30 min before kick-off.
-              Free entry — first come, first seated.
+              Proyectamos todos los partidos. Las puertas abren 30 min antes del pitido inicial.
+              Entrada libre — primero en llegar, primero en sentarse.
             </p>
           </div>
         </motion.div>
@@ -105,7 +107,7 @@ export default function Schedule() {
                     <div className="flex items-center gap-4 md:gap-8 shrink-0">
                       <span className="text-white/45 text-xs font-bold tracking-widest">{m.time}</span>
                       <span className="text-[9px] font-bold tracking-widest text-white/25 uppercase hidden md:block">
-                        VILANOVA BEACH
+                        PLAYA DE VILANOVA
                       </span>
                     </div>
                   </motion.div>
@@ -124,12 +126,12 @@ export default function Schedule() {
           className="mt-16 pt-10 border-t border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
         >
           <p className="text-white/40 text-xs tracking-widest uppercase max-w-sm">
-            Schedule subject to official broadcast times.
-            All matches on the giant projector at Vilanova Beach.
+            Horario sujeto a los tiempos oficiales de emisión.
+            Todos los partidos en el proyector gigante de la Playa de Vilanova.
           </p>
-          <a href="mailto:hola@golalmar.com" className="btn-outline-white shrink-0">
-            RESERVE YOUR SEAT
-          </a>
+          <button onClick={openModal} className="btn-outline-white shrink-0">
+            RESERVA TU ASIENTO
+          </button>
         </motion.div>
 
       </div>

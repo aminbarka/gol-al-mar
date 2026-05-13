@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import { useReservation } from "./ReservationContext";
 
 const words = [
   { text: "WORLD", color: "text-[#050505]" },
@@ -9,6 +10,7 @@ const words = [
 ];
 
 export default function Hero() {
+  const { openModal } = useReservation();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
@@ -38,8 +40,8 @@ export default function Hero() {
       >
         <div className="relative w-full aspect-[3/4] overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80"
-            alt="Football on beach"
+            src="https://images.unsplash.com/photo-1609516903996-cf2ed8e5992a?w=600&q=80"
+            alt="Balón de fútbol en la arena de la playa al atardecer"
             fill
             priority
             sizes="(max-width: 768px) 180px, 320px"
@@ -48,7 +50,7 @@ export default function Hero() {
           <div className="absolute inset-0 border border-[#050505]/20" />
         </div>
         <p className="text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mt-2 text-center">
-          Vilanova Beach · Summer 2026
+          Playa de Vilanova · Verano 2026
         </p>
       </motion.div>
 
@@ -61,8 +63,8 @@ export default function Hero() {
       >
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80"
-            alt="Outdoor crowd event"
+            src="https://images.unsplash.com/photo-1762215609231-538f04f78d75?w=600&q=80"
+            alt="Afición viendo el partido en cine al aire libre"
             fill
             sizes="(max-width: 768px) 130px, 200px"
             className="object-cover"
@@ -79,11 +81,11 @@ export default function Hero() {
         className="relative z-20 max-w-7xl mx-auto w-full flex items-start justify-between pt-6"
       >
         <div>
-          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Date</p>
-          <p className="text-sm font-bold text-[#050505] tracking-wide">JUNE — JULY 2026</p>
+          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Fecha</p>
+          <p className="text-sm font-bold text-[#050505] tracking-wide">JUNIO — JULIO 2026</p>
         </div>
         <div className="text-right">
-          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Kick-off</p>
+          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Inicio</p>
           <p className="text-sm font-bold text-[#050505] tracking-wide">21:00</p>
         </div>
       </motion.div>
@@ -112,7 +114,7 @@ export default function Hero() {
             transition={{ duration: 0.75, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="font-display text-[clamp(3.5rem,12vw,12rem)] leading-none text-[#050505]">
-              AT THE BEACH
+              EN LA PLAYA
             </span>
           </motion.div>
 
@@ -135,14 +137,14 @@ export default function Hero() {
         className="relative z-20 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 border-t border-[#050505]/15 pt-8"
       >
         <div>
-          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Location</p>
+          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Ubicación</p>
           <p className="text-sm font-bold text-[#050505] tracking-wide">
-            VILANOVA BEACH · VILANOVA I LA GELTRÚ · SPAIN
+            PLAYA DE VILANOVA · VILANOVA I LA GELTRÚ · ESPAÑA
           </p>
         </div>
         <div className="flex gap-3 flex-wrap">
-          <a href="#info" className="btn-outline text-[#050505]">RESERVE A SPOT</a>
-          <a href="#schedule" className="btn-outline text-[#050505]">SEE MATCHES</a>
+          <button onClick={openModal} className="btn-outline text-[#050505]">RESERVA TU SITIO</button>
+          <a href="#schedule" className="btn-outline text-[#050505]">VER PARTIDOS</a>
         </div>
       </motion.div>
     </section>

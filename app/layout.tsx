@@ -16,18 +16,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Gol al Mar · World Cup at Vilanova Beach 2026",
+  title: "Gol al Mar · El Mundial en la Playa de Vilanova 2026",
   description:
-    "Watch every World Cup 2026 match live on a giant projector screen right at Vilanova Beach. Free entry. Sand under your feet. Gol al Mar.",
+    "Mira todos los partidos del Mundial 2026 en directo en una pantalla gigante justo en la Playa de Vilanova. Entrada libre. Arena bajo los pies. Gol al Mar.",
   keywords:
-    "gol al mar, world cup beach, vilanova beach, outdoor football screening, world cup 2026, spain world cup, beach projector, free outdoor event, vilanova i la geltru, summer 2026",
+    "gol al mar, mundial playa, playa vilanova, fútbol al aire libre, mundial 2026, españa mundial, proyector playa, evento gratuito, vilanova i la geltru, verano 2026",
   authors: [{ name: "Gol al Mar" }],
   openGraph: {
     type: "website",
-    locale: "en_ES",
-    title: "Gol al Mar · World Cup at Vilanova Beach 2026",
+    locale: "es_ES",
+    title: "Gol al Mar · El Mundial en la Playa de Vilanova 2026",
     description:
-      "Gol al Mar — watch the World Cup on a giant screen in front of the beach. Free entry. Summer 2026.",
+      "Gol al Mar — mira el Mundial en una pantalla gigante frente al mar. Entrada libre. Verano 2026.",
   },
 };
 
@@ -36,7 +36,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${bebasNeue.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#F2EFE4]">{children}</body>

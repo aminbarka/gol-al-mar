@@ -4,27 +4,27 @@ import Image from "next/image";
 
 const photos = [
   {
-    src: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=900&q=85",
-    alt: "Football crowd under the lights",
-    label: "Match Night",
+    src: "https://images.unsplash.com/photo-1543746746-46047c4f4bb0?w=900&q=85",
+    alt: "Hombres jugando al fútbol en la arena de la playa",
+    label: "Noche de Partido",
     className: "col-span-1 md:col-span-2 md:row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&q=85",
-    alt: "Outdoor cinema screen",
-    label: "The Big Screen",
+    src: "https://images.unsplash.com/photo-1773142349642-25a4564d33f7?w=800&q=85",
+    alt: "Personas en cojines viendo cine al aire libre",
+    label: "La Pantalla",
     className: "col-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=85",
-    alt: "Outdoor summer event crowd",
-    label: "The Crowd",
+    src: "https://images.unsplash.com/photo-1625007387168-cb24505afb14?w=800&q=85",
+    alt: "Afición viendo un partido de fútbol en pantalla gigante al aire libre",
+    label: "La Afición",
     className: "col-span-1",
   },
   {
     src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=85",
-    alt: "Vilanova beach blue sea",
-    label: "Vilanova Beach",
+    alt: "Mar azul en la playa de Vilanova",
+    label: "Playa de Vilanova",
     className: "col-span-1 md:col-span-2",
   },
 ];
@@ -42,7 +42,7 @@ export default function Gallery() {
           className="flex items-end justify-between mb-6 border-t border-[#050505]/15 pt-12"
         >
           <h2 className="font-display text-[clamp(2.5rem,6vw,6rem)] text-[#050505] leading-none">
-            THE VIBE
+            EL AMBIENTE
           </h2>
           <p className="text-[9px] text-[#050505]/40 font-bold tracking-widest uppercase hidden md:block">
             Gol al Mar · Vilanova 2026

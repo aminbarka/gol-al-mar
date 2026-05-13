@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useReservation } from "./ReservationContext";
 
 export default function InfoStrip() {
+  const { openModal } = useReservation();
   return (
     <section id="info" className="bg-[#F2EFE4] border-t border-[#050505]/15 overflow-hidden">
       <div className="max-w-full">
@@ -19,24 +21,24 @@ export default function InfoStrip() {
           >
             <div>
               <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-4">
-                We&apos;ll be at
+                Estaremos en
               </p>
               <p className="font-display text-[clamp(2.5rem,5vw,5rem)] text-[#050505] leading-none mb-6">
-                VILANOVA<br />BEACH
+                HABANA<br />BLUE
               </p>
               <p className="text-sm text-[#050505]/60 leading-relaxed max-w-xs">
-                Right on the sand, in front of the sea. Show up before 21:00,
-                grab your spot, and get ready for kick-off.
+                En el chiringuito Habana Blue, justo en la playa. Llega antes
+                de las 21:00, elige tu sitio y prepárate para el partido.
               </p>
             </div>
             <div className="mt-8">
               <a
-                href="https://maps.google.com/?q=Vilanova+i+la+Geltru+beach"
+                href="https://www.google.com/maps/dir/?api=1&destination=41.2122968,1.7248974"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline text-[#050505]"
               >
-                GET DIRECTIONS
+                CÓMO LLEGAR
               </a>
             </div>
           </motion.div>
@@ -59,7 +61,7 @@ export default function InfoStrip() {
             {/* Blue overlay strip at bottom */}
             <div className="absolute bottom-0 left-0 right-0 bg-[#0050FF] py-3 px-6 flex items-center justify-between">
               <span className="font-display text-white text-xl tracking-widest">GOL AL MAR</span>
-              <span className="text-white/60 text-[10px] font-bold tracking-widest uppercase">Summer 2026</span>
+              <span className="text-white/60 text-[10px] font-bold tracking-widest uppercase">Verano 2026</span>
             </div>
           </motion.div>
 
@@ -73,20 +75,20 @@ export default function InfoStrip() {
           >
             <div>
               <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-4">
-                You&apos;re invited
+                Estás invitado
               </p>
               <p className="font-display text-[clamp(2.5rem,5vw,5rem)] text-[#050505] leading-none mb-6">
-                RESERVE<br />NOW
+                RESERVA<br />AHORA
               </p>
               <p className="text-sm text-[#050505]/60 leading-relaxed max-w-xs">
-                Entry is completely free. Reserve so we know how many cold
-                drinks and good seats to prepare.
+                La entrada es completamente gratuita. Reserva para que sepamos
+                cuántas bebidas frías y buenos sitios preparar.
               </p>
             </div>
             <div className="mt-8">
-              <a href="mailto:hola@golalmar.com" className="btn-outline text-[#050505]">
-                RESERVE YOUR SPOT
-              </a>
+              <button onClick={openModal} className="btn-outline text-[#050505]">
+                RESERVA TU SITIO
+              </button>
             </div>
           </motion.div>
 

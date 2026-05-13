@@ -1,13 +1,13 @@
 export default function MarqueeBarAlt() {
   const items = [
     "VILANOVA I LA GELTRÚ",
-    "FREE ENTRY",
-    "GIANT SCREEN",
-    "⚽ EVERY MATCH LIVE",
+    "ENTRADA LIBRE",
+    "PANTALLA GIGANTE",
+    "⚽ TODOS LOS PARTIDOS EN VIVO",
     "GOL AL MAR",
-    "BEACH FOOTBALL",
-    "SUMMER 2026",
-    "SAND UNDER YOUR FEET",
+    "FÚTBOL EN LA PLAYA",
+    "VERANO 2026",
+    "ARENA BAJO TUS PIES",
   ];
 
   const repeated = [...items, ...items, ...items];
