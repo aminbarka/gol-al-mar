@@ -16,26 +16,26 @@ const phases: Phase[] = [
   {
     phase: "Fase de Grupos",
     matches: [
-      { date: "JUN 12", datetime: "2026-06-12T21:00:00+02:00", teams: "Partido Inaugural · USA vs. México", time: "21:00" },
-      { date: "JUN 15", datetime: "2026-06-15T21:00:00+02:00", teams: "España · Primer Partido de Grupo", time: "21:00" },
-      { date: "JUN 19", datetime: "2026-06-19T21:00:00+02:00", teams: "España · Grupo Jornada 2", time: "21:00" },
-      { date: "JUN 23", datetime: "2026-06-23T21:00:00+02:00", teams: "España · Grupo Jornada 3", time: "21:00" },
-      { date: "JUN 26", datetime: "2026-06-26T21:00:00+02:00", teams: "Los Mejores Choques del Día", time: "21:00" },
+      { date: "JUN 12", datetime: "2026-06-12T21:00:00+02:00", teams: "🇺🇸 USA vs. 🇲🇽 México · Partido Inaugural", time: "21:00" },
+      { date: "JUN 15", datetime: "2026-06-15T21:00:00+02:00", teams: "🇪🇸 España · Primer Partido de Grupo", time: "21:00" },
+      { date: "JUN 19", datetime: "2026-06-19T21:00:00+02:00", teams: "🇪🇸 España · Grupo Jornada 2", time: "21:00" },
+      { date: "JUN 23", datetime: "2026-06-23T21:00:00+02:00", teams: "🇪🇸 España · Grupo Jornada 3", time: "21:00" },
+      { date: "JUN 26", datetime: "2026-06-26T21:00:00+02:00", teams: "⚽ Los Mejores Choques del Día", time: "21:00" },
     ],
   },
   {
     phase: "Rondas Eliminatorias",
     matches: [
-      { date: "JUL 1–4",   datetime: "2026-07-01T21:00:00+02:00", teams: "Ronda de 32",       time: "21:00" },
-      { date: "JUL 6–9",   datetime: "2026-07-06T21:00:00+02:00", teams: "Octavos de Final",  time: "21:00" },
-      { date: "JUL 11–12", datetime: "2026-07-11T21:00:00+02:00", teams: "Cuartos de Final",  time: "21:00" },
-      { date: "JUL 15–16", datetime: "2026-07-15T21:00:00+02:00", teams: "Semifinales",       time: "21:00" },
+      { date: "JUL 1–4",   datetime: "2026-07-01T21:00:00+02:00", teams: "🏟️ Ronda de 32",       time: "21:00" },
+      { date: "JUL 6–9",   datetime: "2026-07-06T21:00:00+02:00", teams: "🏟️ Octavos de Final",  time: "21:00" },
+      { date: "JUL 11–12", datetime: "2026-07-11T21:00:00+02:00", teams: "🏟️ Cuartos de Final",  time: "21:00" },
+      { date: "JUL 15–16", datetime: "2026-07-15T21:00:00+02:00", teams: "🏟️ Semifinales",       time: "21:00" },
     ],
   },
   {
     phase: "La Final",
     matches: [
-      { date: "JUL 19", datetime: "2026-07-19T21:00:00+02:00", teams: "FINAL DEL MUNDIAL 2026", time: "21:00", highlight: true },
+      { date: "JUL 19", datetime: "2026-07-19T21:00:00+02:00", teams: "🏆 FINAL DEL MUNDIAL 2026", time: "21:00", highlight: true },
     ],
   },
 ];
