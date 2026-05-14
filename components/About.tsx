@@ -29,75 +29,95 @@ export default function About() {
 
         {/* Overlaid text on the image */}
         <div className="absolute inset-0 flex items-end px-8 md:px-16 pb-10 z-10">
-          <motion.p
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="font-display text-white text-[clamp(2rem,6vw,6rem)] leading-none max-w-4xl"
+            className="font-display text-white text-[clamp(2rem,6vw,6rem)] leading-none max-w-4xl m-0 p-0"
           >
             EL FÚTBOL NUNCA SE VIO TAN BIEN
-          </motion.p>
+          </motion.h2>
         </div>
       </div>
 
-      {/* Text + stats */}
-      <div className="px-8 md:px-16 py-20">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
+      {/* Editorial text — centered, Summer Drive style */}
+      <div className="px-8 md:px-16 py-24">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-8"
+          >
+            Sobre Gol al Mar
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65 }}
+            className="text-base leading-relaxed text-[#050505]/65 mb-5"
           >
-            <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-5">
-              Sobre Gol al Mar
-            </p>
-            <p className="text-base leading-relaxed text-[#050505]/70 mb-5">
-              No hay duda. El Mundial solo llega cada cuatro años — y este
-              verano lo vamos a ver de la única manera que tiene sentido: frente
-              al mar, en la arena, con todos los que aman el fútbol.
-            </p>
-            <p className="text-base leading-relaxed text-[#050505]/70">
-              Hemos montado una pantalla de proyector gigante justo en la Playa
-              de Vilanova. Todos los partidos, en directo, con el sonido del
-              estadio resonando sobre el agua. Trae a tu gente, tu bandera, y
-              prepárate para gritar al mar.
-            </p>
-          </motion.div>
+            No hay duda. El Mundial solo llega cada cuatro años — y este verano
+            lo vamos a ver de la única manera que tiene sentido: frente al mar,
+            en la arena, con todos los que aman el fútbol.
+          </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65, delay: 0.12 }}
-            className="flex flex-col justify-between"
+            transition={{ duration: 0.65, delay: 0.08 }}
+            className="text-base leading-relaxed text-[#050505]/65 mb-5"
           >
-            <p className="text-base leading-relaxed text-[#050505]/70 mb-10">
-              Coge tus gafas de sol. Hunde los pies en la arena. Grita todo lo
-              que quieras — aquí nadie te va a callar. Este es el Mundial de
-              Vilanova y todo el mundo está invitado.
-            </p>
-            <div className="grid grid-cols-3 gap-6 border-t border-[#050505]/12 pt-8">
-              {[
-                { num: "64", label: "Partidos" },
-                { num: "GRATIS", label: "Siempre" },
-                { num: "6M+", label: "Pantalla" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-                >
-                  <p className="font-display text-6xl text-[#0050FF] mb-1">{stat.num}</p>
-                  <p className="text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+            Hemos montado una pantalla de proyector gigante justo en la Playa de
+            Vilanova. Todos los partidos, en directo, con el sonido del estadio
+            resonando sobre el agua. Trae a tu gente, tu bandera, y prepárate
+            para gritar al mar.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65, delay: 0.16 }}
+            className="text-base leading-relaxed text-[#050505]/65"
+          >
+            Coge tus gafas de sol. Hunde los pies en la arena. Grita todo lo que
+            quieras — aquí nadie te va a callar. Este es el Mundial de Vilanova
+            y todo el mundo está invitado.
+          </motion.p>
         </div>
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl mx-auto grid grid-cols-3 gap-6 border-t border-[#050505]/12 mt-16 pt-12"
+        >
+          {[
+            { num: "64", label: "Partidos" },
+            { num: "GRATIS", label: "Siempre" },
+            { num: "6M+", label: "Pantalla" },
+          ].map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.28 + i * 0.08 }}
+              className="text-center"
+            >
+              <p className="font-display text-5xl md:text-6xl text-[#0050FF] mb-1">{stat.num}</p>
+              <p className="text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase">{stat.label}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

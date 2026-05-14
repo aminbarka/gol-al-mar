@@ -16,12 +16,20 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#F2EFE4] border-b border-[#050505]/15" : "bg-transparent"
+        scrolled
+          ? "bg-[#F2EFE4] border-b border-[#050505]/15"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 group">
-          <span className="font-display text-2xl text-[#050505] tracking-widest leading-none group-hover:text-[#0050FF] transition-colors duration-200">
+          <span
+            className={`font-display text-2xl tracking-widest leading-none transition-colors duration-300 ${
+              scrolled
+                ? "text-[#050505] group-hover:text-[#0050FF]"
+                : "text-white group-hover:text-[#F2EFE4]/70"
+            }`}
+          >
             GOL AL MAR
           </span>
         </a>
@@ -35,12 +43,19 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="link-line text-[#050505]/55 hover:text-[#050505] text-xs font-bold tracking-widest transition-colors"
+              className={`link-line text-xs font-bold tracking-widest transition-colors duration-300 ${
+                scrolled
+                  ? "text-[#050505]/55 hover:text-[#050505]"
+                  : "text-white/70 hover:text-white"
+              }`}
             >
               {link.label}
             </a>
           ))}
-          <button onClick={openModal} className="btn-outline text-[#050505]">
+          <button
+            onClick={openModal}
+            className={scrolled ? "btn-outline text-[#050505]" : "btn-outline-white"}
+          >
             RESERVAR
           </button>
         </div>
@@ -50,9 +65,21 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
-          <span className={`w-6 h-px bg-[#050505] block transition-all duration-200 origin-center ${open ? "rotate-45 translate-y-[6px]" : ""}`} />
-          <span className={`w-6 h-px bg-[#050505] block transition-all duration-200 ${open ? "opacity-0" : ""}`} />
-          <span className={`w-6 h-px bg-[#050505] block transition-all duration-200 origin-center ${open ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+          <span
+            className={`w-6 h-px block transition-all duration-200 origin-center ${
+              scrolled ? "bg-[#050505]" : "bg-white"
+            } ${open ? "rotate-45 translate-y-[6px]" : ""}`}
+          />
+          <span
+            className={`w-6 h-px block transition-all duration-200 ${
+              scrolled ? "bg-[#050505]" : "bg-white"
+            } ${open ? "opacity-0" : ""}`}
+          />
+          <span
+            className={`w-6 h-px block transition-all duration-200 origin-center ${
+              scrolled ? "bg-[#050505]" : "bg-white"
+            } ${open ? "-rotate-45 -translate-y-[6px]" : ""}`}
+          />
         </button>
       </div>
 
@@ -73,7 +100,10 @@ export default function Navbar() {
             </a>
           ))}
           <button
-            onClick={() => { setOpen(false); openModal(); }}
+            onClick={() => {
+              setOpen(false);
+              openModal();
+            }}
             className="btn-outline text-center text-[#050505] mt-2 w-full"
           >
             RESERVAR

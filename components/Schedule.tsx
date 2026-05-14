@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useReservation } from "./ReservationContext";
 
-type Match = { date: string; teams: string; time: string; highlight?: boolean };
+type Match = { date: string; datetime: string; teams: string; time: string; highlight?: boolean };
 type Phase = { phase: string; dates: string; matches: Match[] };
 
 const phases: Phase[] = [
@@ -10,28 +10,28 @@ const phases: Phase[] = [
     phase: "Fase de Grupos",
     dates: "12 JUN — 26 JUN",
     matches: [
-      { date: "JUN 12", teams: "Partido Inaugural · USA vs. México", time: "21:00" },
-      { date: "JUN 15", teams: "España · Primer Partido de Grupo", time: "21:00" },
-      { date: "JUN 19", teams: "España · Grupo Jornada 2", time: "21:00" },
-      { date: "JUN 23", teams: "España · Grupo Jornada 3", time: "21:00" },
-      { date: "JUN 26", teams: "Los Mejores Choques del Día", time: "21:00" },
+      { date: "JUN 12", datetime: "2026-06-12T21:00:00+02:00", teams: "Partido Inaugural · USA vs. México", time: "21:00" },
+      { date: "JUN 15", datetime: "2026-06-15T21:00:00+02:00", teams: "España · Primer Partido de Grupo", time: "21:00" },
+      { date: "JUN 19", datetime: "2026-06-19T21:00:00+02:00", teams: "España · Grupo Jornada 2", time: "21:00" },
+      { date: "JUN 23", datetime: "2026-06-23T21:00:00+02:00", teams: "España · Grupo Jornada 3", time: "21:00" },
+      { date: "JUN 26", datetime: "2026-06-26T21:00:00+02:00", teams: "Los Mejores Choques del Día", time: "21:00" },
     ],
   },
   {
     phase: "Rondas Eliminatorias",
     dates: "1 JUL — 16 JUL",
     matches: [
-      { date: "JUL 1–4", teams: "Ronda de 32", time: "21:00" },
-      { date: "JUL 6–9", teams: "Octavos de Final", time: "21:00" },
-      { date: "JUL 11–12", teams: "Cuartos de Final", time: "21:00" },
-      { date: "JUL 15–16", teams: "Semifinales", time: "21:00" },
+      { date: "JUL 1–4", datetime: "2026-07-01T21:00:00+02:00", teams: "Ronda de 32", time: "21:00" },
+      { date: "JUL 6–9", datetime: "2026-07-06T21:00:00+02:00", teams: "Octavos de Final", time: "21:00" },
+      { date: "JUL 11–12", datetime: "2026-07-11T21:00:00+02:00", teams: "Cuartos de Final", time: "21:00" },
+      { date: "JUL 15–16", datetime: "2026-07-15T21:00:00+02:00", teams: "Semifinales", time: "21:00" },
     ],
   },
   {
     phase: "La Final",
     dates: "19 JUL",
     matches: [
-      { date: "JUL 19", teams: "FINAL DEL MUNDIAL 2026", time: "21:00", highlight: true },
+      { date: "JUL 19", datetime: "2026-07-19T21:00:00+02:00", teams: "FINAL DEL MUNDIAL 2026", time: "21:00", highlight: true },
     ],
   },
 ];
@@ -97,9 +97,9 @@ export default function Schedule() {
                     }`}
                   >
                     <div className="flex items-center gap-6 md:gap-10 min-w-0">
-                      <span className={`font-display text-xl md:text-2xl shrink-0 w-20 ${m.highlight ? "text-white" : "text-white/45"}`}>
+                      <time dateTime={m.datetime} className={`font-display text-xl md:text-2xl shrink-0 w-20 ${m.highlight ? "text-white" : "text-white/45"}`}>
                         {m.date}
-                      </span>
+                      </time>
                       <span className={`font-display text-2xl md:text-4xl truncate ${m.highlight ? "text-white" : "text-white/85"}`}>
                         {m.teams}
                       </span>

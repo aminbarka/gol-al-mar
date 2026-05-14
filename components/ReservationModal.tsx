@@ -53,7 +53,12 @@ export default function ReservationModal({ isOpen, onClose }: Props) {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[101] flex items-center justify-center px-4 pointer-events-none"
           >
-            <div className="bg-[#F2EFE4] w-full max-w-md p-8 relative pointer-events-auto shadow-2xl">
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-title"
+              className="bg-[#F2EFE4] w-full max-w-md p-8 relative pointer-events-auto shadow-2xl"
+            >
               <button
                 onClick={onClose}
                 aria-label="Cerrar"
@@ -65,18 +70,20 @@ export default function ReservationModal({ isOpen, onClose }: Props) {
               <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-2">
                 Habana Blue · Gol al Mar
               </p>
-              <h2 className="font-display text-5xl text-[#050505] leading-none mb-7">
+              <h2 id="modal-title" className="font-display text-5xl text-[#050505] leading-none mb-7">
                 RESERVA<br />TU SITIO
               </h2>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>
-                  <label className="block text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mb-1.5">
+                  <label htmlFor="reserva-nombre" className="block text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mb-1.5">
                     Nombre *
                   </label>
                   <input
+                    id="reserva-nombre"
                     type="text"
                     required
+                    autoComplete="given-name"
                     value={nombre}
                     onChange={(e) => setNombre(e.target.value)}
                     placeholder="Tu nombre"
@@ -85,10 +92,11 @@ export default function ReservationModal({ isOpen, onClose }: Props) {
                 </div>
 
                 <div>
-                  <label className="block text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mb-1.5">
+                  <label htmlFor="reserva-personas" className="block text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mb-1.5">
                     Número de personas *
                   </label>
                   <input
+                    id="reserva-personas"
                     type="number"
                     required
                     min="1"
@@ -100,10 +108,11 @@ export default function ReservationModal({ isOpen, onClose }: Props) {
                 </div>
 
                 <div>
-                  <label className="block text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mb-1.5">
+                  <label htmlFor="reserva-partido" className="block text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mb-1.5">
                     Partido que quieres ver
                   </label>
                   <input
+                    id="reserva-partido"
                     type="text"
                     value={partido}
                     onChange={(e) => setPartido(e.target.value)}
@@ -113,11 +122,13 @@ export default function ReservationModal({ isOpen, onClose }: Props) {
                 </div>
 
                 <div>
-                  <label className="block text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mb-1.5">
+                  <label htmlFor="reserva-telefono" className="block text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mb-1.5">
                     Tu teléfono
                   </label>
                   <input
+                    id="reserva-telefono"
                     type="tel"
+                    autoComplete="tel"
                     value={telefono}
                     onChange={(e) => setTelefono(e.target.value)}
                     placeholder="+34 600 000 000"

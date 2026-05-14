@@ -5,8 +5,8 @@ import Image from "next/image";
 import { useReservation } from "./ReservationContext";
 
 const words = [
-  { text: "WORLD", color: "text-[#050505]" },
-  { text: "CUP", color: "text-[#0050FF]" },
+  { text: "WORLD", color: "text-white" },
+  { text: "CUP", color: "text-[#F2EFE4]/70" },
 ];
 
 export default function Hero() {
@@ -20,11 +20,30 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative min-h-screen bg-[#F2EFE4] flex flex-col justify-between pt-20 pb-10 px-6 overflow-hidden"
+      aria-label="Gol al Mar — World Cup en la Playa"
+      className="relative min-h-screen bg-[#0050FF] flex flex-col justify-between pt-20 pb-10 px-6 overflow-hidden"
     >
+      <h1
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          padding: 0,
+          margin: "-1px",
+          overflow: "hidden",
+          clip: "rect(0,0,0,0)",
+          whiteSpace: "nowrap",
+          borderWidth: 0,
+        }}
+      >
+        World Cup en la Playa · Gol al Mar — El Mundial 2026 en la Playa de
+        Vilanova i la Geltrú. Entrada libre, pantalla gigante, todos los
+        partidos en directo.
+      </h1>
+
       {/* Grain texture */}
       <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-[0.035]"
+        className="pointer-events-none absolute inset-0 z-0 opacity-[0.06]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
         }}
@@ -47,9 +66,9 @@ export default function Hero() {
             sizes="(max-width: 768px) 180px, 320px"
             className="object-cover"
           />
-          <div className="absolute inset-0 border border-[#050505]/20" />
+          <div className="absolute inset-0 border border-white/20" />
         </div>
-        <p className="text-[9px] font-bold tracking-widest text-[#050505]/40 uppercase mt-2 text-center">
+        <p className="text-[9px] font-bold tracking-widest text-white/40 uppercase mt-2 text-center">
           Playa de Vilanova · Verano 2026
         </p>
       </motion.div>
@@ -69,7 +88,7 @@ export default function Hero() {
             sizes="(max-width: 768px) 130px, 200px"
             className="object-cover"
           />
-          <div className="absolute inset-0 border border-[#050505]/20" />
+          <div className="absolute inset-0 border border-white/20" />
         </div>
       </motion.div>
 
@@ -81,12 +100,12 @@ export default function Hero() {
         className="relative z-20 max-w-7xl mx-auto w-full flex items-start justify-between pt-6"
       >
         <div>
-          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Fecha</p>
-          <p className="text-sm font-bold text-[#050505] tracking-wide">JUNIO — JULIO 2026</p>
+          <p className="text-[9px] font-bold tracking-widest text-white/40 uppercase mb-1">Fecha</p>
+          <p className="text-sm font-bold text-white tracking-wide">JUNIO — JULIO 2026</p>
         </div>
         <div className="text-right">
-          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Inicio</p>
-          <p className="text-sm font-bold text-[#050505] tracking-wide">21:00</p>
+          <p className="text-[9px] font-bold tracking-widest text-white/40 uppercase mb-1">Inicio</p>
+          <p className="text-sm font-bold text-white tracking-wide">21:00</p>
         </div>
       </motion.div>
 
@@ -113,7 +132,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.75, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="font-display text-[clamp(3.5rem,12vw,12rem)] leading-none text-[#050505]">
+            <span className="font-display text-[clamp(3.5rem,12vw,12rem)] leading-none text-white">
               EN LA PLAYA
             </span>
           </motion.div>
@@ -122,7 +141,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="font-display text-[clamp(1.5rem,4vw,4rem)] text-[#0050FF] mt-3 leading-none tracking-wider"
+            className="font-display text-[clamp(1.5rem,4vw,4rem)] text-[#F2EFE4]/60 mt-3 leading-none tracking-wider"
           >
             GOL AL MAR
           </motion.p>
@@ -134,17 +153,17 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.85 }}
-        className="relative z-20 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 border-t border-[#050505]/15 pt-8"
+        className="relative z-20 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 border-t border-white/20 pt-8"
       >
         <div>
-          <p className="text-[9px] font-bold tracking-widest text-[#050505]/35 uppercase mb-1">Ubicación</p>
-          <p className="text-sm font-bold text-[#050505] tracking-wide">
+          <p className="text-[9px] font-bold tracking-widest text-white/40 uppercase mb-1">Ubicación</p>
+          <p className="text-sm font-bold text-white tracking-wide">
             PLAYA DE VILANOVA · VILANOVA I LA GELTRÚ · ESPAÑA
           </p>
         </div>
         <div className="flex gap-3 flex-wrap">
-          <button onClick={openModal} className="btn-outline text-[#050505]">RESERVA TU SITIO</button>
-          <a href="#schedule" className="btn-outline text-[#050505]">VER PARTIDOS</a>
+          <button onClick={openModal} className="btn-outline-white">RESERVA TU SITIO</button>
+          <a href="#schedule" className="btn-outline-white">VER PARTIDOS</a>
         </div>
       </motion.div>
     </section>
