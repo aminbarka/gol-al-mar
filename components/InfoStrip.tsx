@@ -52,8 +52,8 @@ export default function InfoStrip() {
             className="relative w-full md:w-[360px] lg:w-[480px] min-h-[320px] md:min-h-0 overflow-hidden group"
           >
             <Image
-              src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=960&q=85"
-              alt="Football crowd at the beach"
+              src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGZk05mnwFvJg6G8UyntOxPQxBrDP4cDiCz7xspLIT3dCVNOu4m6DfgfY4ACzAZxceR9tymkjNq-lAeYaVErgeqNuvtXf60j67StmexGrL8muKCCxASVfig7CyocsFLGHO_E3_jHA=w1600-h1200-k-no"
+              alt="Habana Blue Chiringuito — Playa de Vilanova i la Geltrú"
               fill
               sizes="(max-width: 768px) 100vw, 480px"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
