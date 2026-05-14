@@ -4,7 +4,6 @@ import InfoStrip from "@/components/InfoStrip";
 import MarqueeBar from "@/components/MarqueeBar";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
-import MarqueeBarAlt from "@/components/MarqueeBarAlt";
 import Schedule from "@/components/Schedule";
 import Footer from "@/components/Footer";
 import { ReservationProvider } from "@/components/ReservationContext";
@@ -19,7 +18,6 @@ export default function Home() {
         <MarqueeBar />
         <About />
         <Gallery />
-        <MarqueeBarAlt />
         <Schedule />
         <Footer />
       </main>
